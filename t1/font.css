@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'MP';
+  src: url("../font/mp/ru-en/light/light.woff") format("woff"), url("../font/mp/ru-en/light/light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'MP';
+  src: url("../font/mp/ru-en/light-it/light-it.woff") format("woff"), url("../font/mp/ru-en/light-it/light-it.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'MP';
+  src: url("../font/mp/ru-en/regular/regular.woff") format("woff"), url("../font/mp/ru-en/regular/regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'MP';
+  src: url("../font/mp/ru-en/it/it.woff") format("woff"), url("../font/mp/ru-en/it/it.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'MP';
+  src: url("../font/mp/ru-en/semibold/semibold.woff") format("woff"), url("../font/mp/ru-en/semibold/semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'MP';
+  src: url("../font/mp/ru-en/semibold-it/semibold-it.woff") format("woff"), url("../font/mp/ru-en/semibold-it/semibold-it.woff2") format("woff2");
+  font-weight: 600;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'MP';
+  src: url("../font/mp/ru-en/bold/bold.woff") format("woff"), url("../font/mp/ru-en/bold/bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'MP';
+  src: url("../font/mp/ru-en/bold-it/bold-it.woff") format("woff"), url("../font/mp/ru-en/bold-it/bold-it.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic; }
