@@ -285,8 +285,8 @@
       return (
         <div>
           {menu}
-          {currentPage > 0 ? <button onClick={(e) => this.genData(currentPage)}>Gen data</button> : null}
-          {currentPage > 0 ? <button onClick={(e) => this.genData(currentPage, true)}>Clear data</button> : null}
+          {currentPage > 0 ? <button style={liStyle} onClick={(e) => this.genData(currentPage)}>Gen data</button> : null}
+          {currentPage > 0 ? <button style={liStyle} onClick={(e) => this.genData(currentPage, true)}>Clear data</button> : null}
           <Pages pages={pages} current={currentPage}/>
         </div>
       );
