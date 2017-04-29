@@ -181,9 +181,9 @@
           return <PhotoItem key={'page-' + i.id + '-photo-' + j} id={j} url={i.url}/>
         })
 
-        const displayNone = {...pageScrollY, display: 'none'}
+        const displayNone = i.id !== current ? {...pageScrollY, visibility: 'hidden', height: 0} : {...pageScrollY, height: '757px'}
 
-        return <div key={'page-' + i.id} style={i.id !== current ? displayNone : pageScrollY}>
+        return <div key={'page-' + i.id} style={displayNone}>
           <span>{i.title}</span>
           {items}
         </div>
@@ -232,11 +232,13 @@
 //          );
 //        }
     genData(currentPage, clear) {
+        console.log('gen start', currentPage)
       const multi = Date.now()
       ReactDOMFiber.unstable_deferredUpdates(() =>
         this.setState(state => {
           const {pages} = this.state
           const newData = !clear ? rangeArray(fnRandom(PAGE_MIN_SIZE, PAGE_MAX_SIZE)).map(i => i * multi) : []
+          console.log('gen new data', currentPage)
           const newPages = pages.map(i => {
             if (i.id === currentPage) {
               return {
