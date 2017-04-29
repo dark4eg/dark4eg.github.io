@@ -231,11 +231,11 @@
 //            this.setState(state => ({ seconds: (state.seconds % 10) + 1 }))
 //          );
 //        }
-    genData(clear) {
+    genData(currentPage, clear) {
       const multi = Date.now()
       ReactDOMFiber.unstable_deferredUpdates(() =>
         this.setState(state => {
-          const {pages, currentPage} = this.state
+          const {pages} = this.state
           const newData = !clear ? rangeArray(fnRandom(PAGE_MIN_SIZE, PAGE_MAX_SIZE)).map(i => i * multi) : []
           const newPages = pages.map(i => {
             if (i.id === currentPage) {
@@ -255,7 +255,7 @@
     }
 
     setCurrent(page) {
-      ReactDOMFiber.unstable_deferredUpdates(() =>
+      ReactDOMFiber.unstable_batchedUpdates(() =>
         this.setState(state => ({currentPage: page}))
       );
     }
@@ -285,8 +285,8 @@
       return (
         <div>
           {menu}
-          {currentPage > 0 ? <button onClick={(e) => this.genData()}>Gen data</button> : null}
-          {currentPage > 0 ? <button onClick={(e) => this.genData(true)}>Clear data</button> : null}
+          {currentPage > 0 ? <button onClick={(e) => this.genData(currentPage)}>Gen data</button> : null}
+          {currentPage > 0 ? <button onClick={(e) => this.genData(currentPage, true)}>Clear data</button> : null}
           <Pages pages={pages} current={currentPage}/>
         </div>
       );
