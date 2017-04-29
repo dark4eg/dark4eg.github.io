@@ -144,8 +144,8 @@
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  var PAGE_MIN_SIZE = 200
-  var PAGE_MAX_SIZE = 2000
+  var PAGE_MIN_SIZE = 120
+  var PAGE_MAX_SIZE = 1200
 
   class PhotoItem extends React.Component {
     constructor(props) {
@@ -278,15 +278,15 @@
         {pages.map((i) => {
           return <li key={'menu-page' + i.id} style={liStyle}>
             <a href='javascript:0'
-               onClick={(e) => this.setCurrent(i.id)}>{i.title}</a></li>
+               onClick={(e) => this.setCurrent(i.id)}>{i.title}={i.data.length}</a></li>
         })}
       </ul>;
 
       return (
         <div>
           {menu}
-          <button onClick={(e) => this.genData()}>Gen data</button>
-          <button onClick={(e) => this.genData(true)}>Clear data</button>
+          {currentPage > 0 ? <button onClick={(e) => this.genData()}>Gen data</button> : null}
+          {currentPage > 0 ? <button onClick={(e) => this.genData(true)}>Clear data</button> : null}
           <Pages pages={pages} current={currentPage}/>
         </div>
       );
